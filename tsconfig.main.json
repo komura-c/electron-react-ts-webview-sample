@@ -1,0 +1,12 @@
+{
+  "extends": ".",
+  "compilerOptions": {
+    "outDir": "dist",
+
+    // app
+    "lib": ["es2019", "es2020.promise", "es2020.bigint", "es2020.string"],
+    "target": "es2019",
+    "module": "commonjs"
+  },
+  "include": ["src/*.ts"]
+}

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "outDir": "dist",
+    "baseUrl": "./",
+
+    // front
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["DOM", "ESNext"],
+    "sourceMap": true,
+    "jsx": "react-jsx"
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "lib": ["es2019", "es2020.promise", "es2020.bigint", "es2020.string"],
+      "target": "es2019",
+      "module": "commonjs"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "electron-react-ts-webview-sample",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "dev": "npm run clean && run-p dev:*",
+    "dev:tsc": "tsc -w -p tsconfig.main.json",
+    "dev:webpack": "cross-env NODE_ENV=\"development\" webpack",
+    "dev:electron": "wait-on ./dist/index.html && cpx package.json ./dist && cross-env NODE_ENV=\"development\" electron ./dist",
+    "lint": "eslint -c .eslintrc --ext .ts ./src",
+    "build": "npm run clean && cross-env NODE_ENV=\"production\" webpack && cpx package.json ./dist && run-p build:*",
+    "build:mac": "electron-packager dist $npm_package_name --platform=darwin --arch=x64 --overwrite",
+    "build:win": "electron-packager dist $npm_package_name --platform=win32 --arch=x64 --overwrite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/mini-css-extract-plugin": "^2.4.0",
+    "@types/node": "^17.0.8",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "cpx": "^1.5.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "electron": "^16.0.6",
+    "electron-packager": "^15.4.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "eslint": "^8.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.6",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4",
+    "wait-on": "^6.0.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
